@@ -1,0 +1,29 @@
+extends layout
+
+block title
+  
+block content
+  div(class='author_detail')
+    div(class='author_detail_image')
+        div(class='author_image')
+          <img src="#{author.author_image}" class="rounded" alt="author-image">
+        
+      
+    div(class='author_detail_info')
+      div(class='author_name')
+          h1 #{author.name}
+          p #{author.lifespan}
+      div(class='author_background')
+        p #{author.author_background}
+      div(style='margin-left:20px;margin-top:20px')
+block another_content
+  div(class='author_books')
+    h4 Books
+    dl
+      each book in author_books
+        dt 
+          a(href=book.url) #{book.title}
+
+
+      else
+        p This author has no books.
