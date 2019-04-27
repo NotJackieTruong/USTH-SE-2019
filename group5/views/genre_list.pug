@@ -1,0 +1,16 @@
+extends layout
+block title
+
+block content
+    div(class='genre_list_block')
+        each genre in genre_list
+            <div class="cards-list">
+                <div class="card">
+                    <div class="card_image" >
+                        a(href=genre.url) <img src="#{genre.genre_image}" alt="genre-image" />
+                    </div>
+                    <div class="card_title title-white">
+                        <p>#{genre.name}</p>
+                    </div>
+                </div>
+            </div>
