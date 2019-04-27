@@ -1,0 +1,22 @@
+extends layout
+block title
+ 
+block content
+    each author in author_list
+        //- div(class='author_list_block')
+        //-   div(class='author_list_block_image')
+        //-     <img src="#{author.author_image}" class="rounded" alt="author-image">
+        //-   div(class='author_list_block_text')
+        //-     a(href=author.url) #{author.name} 
+        //-     |  (#{author.lifespan})
+        div(class="author_list_block")
+          div(class="card text-center" style="width: 16rem;")
+            <img src="#{author.author_image}" class="card-img-top" alt="author-image">
+            div(class="card-body")
+              h5.card-title.text-center #{author.name}
+              p.card-text.text-center #{author.lifespan}
+              a.btn.btn-primary(href=author.url) View detail
+          
+
+    else
+      li There are no authors.
