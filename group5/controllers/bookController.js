@@ -25,12 +25,12 @@ exports.index = function(req, res) {
 // Display all books
 exports.book_list = function(req, res, next) {
 
-    Book.find({}, 'title author book_image')
-      .populate('author')
-      .exec(function (err, list_books) {
-        if (err) { return next(err); }
+    Book.find({}, 'title author book_image')  //A
+      .populate('author')  //B
+      .exec(function (err, list_books) { //C
+        if (err) { return next(err); }  //D
         //Successful, so render
-        res.render('book_list', { title: 'Book Review', book_list: list_books });
+        res.render('book_list', { title: 'Book Review', book_list: list_books }); //E
       });
       
   };
